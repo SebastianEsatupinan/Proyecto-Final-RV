@@ -11,7 +11,8 @@ public class Perrilla : MonoBehaviour
 
     private XRBaseInteractor interactor; // Interactor que está agarrando la perilla
     private bool isRotating = false; // Bandera para saber si estamos rotando
-    private float startingAngle; // Ángulo inicial cuando se agarra la perilla
+    private float initialInteractorAngle; // Ángulo inicial del interactor respecto al pivote
+    private float initialKnobAngle; // Ángulo inicial de la perilla cuando se agarra
 
     void Start()
     {
@@ -27,9 +28,12 @@ public class Perrilla : MonoBehaviour
     private void OnGrabbed(SelectEnterEventArgs args)
     {
         // Inicia la rotación cuando se agarra la perilla
-        interactor = args.interactor;
+        interactor = args.interactorObject as XRBaseInteractor;
         isRotating = true;
-        startingAngle = GetLocalRotationAngle();
+
+        // Guardamos el ángulo inicial del interactor respecto al pivote y el ángulo actual de la perilla
+        initialInteractorAngle = CalculateAngle(interactor.transform.position);
+        initialKnobAngle = rotationPivot.localEulerAngles.z;
     }
 
     private void OnReleased(SelectExitEventArgs args)
@@ -49,22 +53,21 @@ public class Perrilla : MonoBehaviour
 
     private void RotateKnob()
     {
-        // Calcula la dirección del controlador en relación al pivote
-        Vector3 direction = interactor.transform.position - rotationPivot.position;
+        // Calcula el ángulo actual del interactor en relación al pivote
+        float currentInteractorAngle = CalculateAngle(interactor.transform.position);
 
-        // Calcula el ángulo en el plano X-Z para asegurar que solo rota en el eje Z
-        float angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+        // Calcula el cambio de ángulo desde el inicio y ajusta con el ángulo inicial de la perilla
+        float angleDelta = currentInteractorAngle - initialInteractorAngle;
+        float newAngle = Mathf.Clamp(initialKnobAngle + angleDelta, minAngle, maxAngle);
 
-        // Calcula el nuevo ángulo restringido entre minAngle y maxAngle
-        float newAngle = Mathf.Clamp(startingAngle + angle, minAngle, maxAngle);
-
-        // Aplica la rotación solo en el eje Z, manteniendo X e Y en 0
+        // Aplica la rotación en el eje Z
         rotationPivot.localEulerAngles = new Vector3(0f, 0f, newAngle);
     }
 
-    private float GetLocalRotationAngle()
+    private float CalculateAngle(Vector3 position)
     {
-        // Retorna solo el ángulo de rotación en el eje Z
-        return rotationPivot.localEulerAngles.z;
+        // Calcula el ángulo en el plano X-Z entre el interactor y el pivote de rotación
+        Vector3 direction = position - rotationPivot.position;
+        return Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
     }
 }
