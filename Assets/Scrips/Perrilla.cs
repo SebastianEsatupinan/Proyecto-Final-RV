@@ -5,33 +5,37 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Perrilla : MonoBehaviour
 {
-    public Transform rotationPivot; // Punto de rotación, normalmente el objeto de la perilla
+    public Transform rotationPivot; // Punto de rotación de la perilla
     public float minAngle = 0f; // Ángulo mínimo de rotación en el eje Z
     public float maxAngle = 180f; // Ángulo máximo de rotación en el eje Z
 
-    private XRBaseInteractor interactor; // Interactor que está agarrando la perilla
-    private bool isRotating = false; // Bandera para saber si estamos rotando
-    private float initialInteractorAngle; // Ángulo inicial del interactor respecto al pivote
-    private float initialKnobAngle; // Ángulo inicial de la perilla cuando se agarra
+    private XRBaseInteractor interactor; // Interactor que agarra la perilla
+    private bool isRotating = false; // Estado de rotación
+    private float initialInteractorAngle; // Ángulo inicial del interactor
+    private float initialKnobAngle; // Ángulo inicial de la perilla
+    private Vector3 initialPosition; // Posición fija del pivote
 
     void Start()
     {
-        // Configura los eventos de selección para iniciar y detener la rotación
+        // Configura eventos de agarre y liberación
         var grabInteractable = GetComponent<XRGrabInteractable>();
         if (grabInteractable != null)
         {
             grabInteractable.selectEntered.AddListener(OnGrabbed);
             grabInteractable.selectExited.AddListener(OnReleased);
         }
+
+        // Guarda la posición inicial para fijar el objeto
+        initialPosition = rotationPivot.localPosition;
     }
 
     private void OnGrabbed(SelectEnterEventArgs args)
     {
-        // Inicia la rotación cuando se agarra la perilla
+        // Comienza a rotar cuando se agarra la perilla
         interactor = args.interactorObject as XRBaseInteractor;
         isRotating = true;
 
-        // Guardamos el ángulo inicial del interactor respecto al pivote y el ángulo actual de la perilla
+        // Guarda el ángulo inicial del interactor y el ángulo actual de la perilla en Z
         initialInteractorAngle = CalculateAngle(interactor.transform.position);
         initialKnobAngle = rotationPivot.localEulerAngles.z;
     }
@@ -49,6 +53,9 @@ public class Perrilla : MonoBehaviour
         {
             RotateKnob();
         }
+
+        // Fija la posición en cada frame para evitar movimiento inesperado
+        rotationPivot.localPosition = initialPosition;
     }
 
     private void RotateKnob()
@@ -56,12 +63,12 @@ public class Perrilla : MonoBehaviour
         // Calcula el ángulo actual del interactor en relación al pivote
         float currentInteractorAngle = CalculateAngle(interactor.transform.position);
 
-        // Calcula el cambio de ángulo desde el inicio y ajusta con el ángulo inicial de la perilla
+        // Calcula el cambio de ángulo desde el inicio y ajusta con el ángulo inicial
         float angleDelta = currentInteractorAngle - initialInteractorAngle;
         float newAngle = Mathf.Clamp(initialKnobAngle + angleDelta, minAngle, maxAngle);
 
-        // Aplica la rotación en el eje Z
-        rotationPivot.localEulerAngles = new Vector3(0f, 0f, newAngle);
+        // Aplica solo la rotación en Z usando Quaternion para bloquear otros ejes
+        rotationPivot.localRotation = Quaternion.Euler(0f, 0f, newAngle);
     }
 
     private float CalculateAngle(Vector3 position)
@@ -71,3 +78,4 @@ public class Perrilla : MonoBehaviour
         return Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
     }
 }
+
