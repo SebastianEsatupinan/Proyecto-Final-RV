@@ -1198,6 +1198,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Left Direct Interactor
       objectReference: {fileID: 0}
+    - target: {fileID: 8841706926471734270, guid: 2fd3e07afe5b461490fb8e314976b1b0, type: 3}
+      propertyPath: m_TagString
+      value: Hand
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1252,7 +1256,7 @@ GameObject:
   - component: {fileID: 968265566}
   m_Layer: 0
   m_Name: Right Controller
-  m_TagString: Untagged
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1563,6 +1567,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right Direct Interactor
       objectReference: {fileID: 0}
+    - target: {fileID: 8841706926471734270, guid: 2fd3e07afe5b461490fb8e314976b1b0, type: 3}
+      propertyPath: m_TagString
+      value: Hand
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1585,14 +1593,13 @@ GameObject:
   - component: {fileID: 1070349271}
   - component: {fileID: 1070349270}
   - component: {fileID: 1070349269}
-  - component: {fileID: 1070349268}
   m_Layer: 0
   m_Name: Button_Red_Interactable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1070349267
 Transform:
   m_ObjectHideFlags: 0
@@ -1608,19 +1615,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1745213994}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1070349268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1070349266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3b92be860386b14f801e187dae74fc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  VisualTarget: {fileID: 2075391132}
 --- !u!114 &1070349269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1784,11 +1778,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1 &1081733553
@@ -2300,7 +2294,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1209110083
 Transform:
   m_ObjectHideFlags: 0
@@ -2995,7 +2989,7 @@ GameObject:
   - component: {fileID: 1469375062}
   m_Layer: 0
   m_Name: Left Controller
-  m_TagString: Untagged
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3716,6 +3710,9 @@ GameObject:
   - component: {fileID: 2075391132}
   - component: {fileID: 2075391134}
   - component: {fileID: 2075391133}
+  - component: {fileID: 2075391135}
+  - component: {fileID: 2075391137}
+  - component: {fileID: 2075391138}
   m_Layer: 0
   m_Name: Button_Red_Interactable_Visual
   m_TagString: Untagged
@@ -3732,7 +3729,7 @@ Transform:
   m_GameObject: {fileID: 2075391131}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.15429878, y: -0.026838899, z: 0.011545181}
+  m_LocalPosition: {x: 0.15429878, y: -0.026838899, z: 0.01154518}
   m_LocalScale: {x: 81.615, y: 81.61498, z: 81.61498}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3788,6 +3785,69 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075391131}
   m_Mesh: {fileID: 481690474130248815, guid: 4b873be32dd8d9d41917b2074031a8e3, type: 3}
+--- !u!114 &2075391135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075391131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa35e647279dae4896ebf7c0c0ce3ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonTransform: {fileID: 2075391132}
+  pressedZPosition: -0.029
+  releaseSpeed: 5
+--- !u!54 &2075391137
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075391131}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &2075391138
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075391131}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0015723723, y: 0.0010829887, z: 0.0015723715}
+  m_Center: {x: 0.0000000017344978, y: -0.0005414952, z: 0.0000049212276}
 --- !u!1 &2100742315 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2013643563092308356, guid: 4b873be32dd8d9d41917b2074031a8e3, type: 3}
