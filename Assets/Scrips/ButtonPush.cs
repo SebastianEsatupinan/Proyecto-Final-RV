@@ -9,6 +9,7 @@ public class ButtonPush : MonoBehaviour
     private bool isPressed = false;
 
     [SerializeField] private float pressedZPosition = -0.029f;
+    [SerializeField] private float pressSpeed = 5f;
     [SerializeField] private float releaseSpeed = 5f;
 
     void Start()
@@ -19,9 +20,15 @@ public class ButtonPush : MonoBehaviour
 
     void Update()
     {
-        // Si el botón no está presionado, regresa a su posición original suavemente
-        if (!isPressed)
+        if (isPressed)
         {
+            // Mueve el botón hacia la posición presionada
+            Vector3 targetPosition = new Vector3(originalPosition.x, originalPosition.y, pressedZPosition);
+            buttonTransform.localPosition = Vector3.Lerp(buttonTransform.localPosition, targetPosition, Time.deltaTime * pressSpeed);
+        }
+        else
+        {
+            // Si el botón no está presionado, regresa a su posición original suavemente
             buttonTransform.localPosition = Vector3.Lerp(buttonTransform.localPosition, originalPosition, Time.deltaTime * releaseSpeed);
         }
     }
@@ -31,8 +38,8 @@ public class ButtonPush : MonoBehaviour
         // Verificamos que el objeto que toca sea la mano
         if (other.CompareTag("Hand")) // Asegúrate de que tu mano tenga el tag "Hand"
         {
+            Debug.Log("Se pulso el boton");
             isPressed = true;
-            MoveButton();
         }
     }
 
@@ -41,15 +48,8 @@ public class ButtonPush : MonoBehaviour
         // Al salir de la colisión, el botón deja de estar presionado
         if (other.CompareTag("Hand"))
         {
+            Debug.Log("Se solto el boton");
             isPressed = false;
         }
-    }
-
-    private void MoveButton()
-    {
-        // Limitamos el movimiento del botón hasta la posición máxima en Z
-        Vector3 newPosition = buttonTransform.localPosition;
-        newPosition.z = Mathf.Max(pressedZPosition, newPosition.z);
-        buttonTransform.localPosition = newPosition;
     }
 }
