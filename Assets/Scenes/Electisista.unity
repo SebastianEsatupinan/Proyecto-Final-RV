@@ -6428,8 +6428,8 @@ GameObject:
   - component: {fileID: 1602297853}
   - component: {fileID: 1602297852}
   - component: {fileID: 1602297851}
-  - component: {fileID: 1602297850}
   - component: {fileID: 1602297855}
+  - component: {fileID: 1602297856}
   m_Layer: 0
   m_Name: Button_special
   m_TagString: button
@@ -6453,23 +6453,6 @@ Transform:
   - {fileID: 1779237016}
   m_Father: {fileID: 1745213994}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1602297850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1602297848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ec20dfb2c530774386d4485bc5b3aef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onButtonPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  pressedOffset: {x: 0, y: 0, z: -0.05}
-  pressSpeed: 5
 --- !u!65 &1602297851
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6582,6 +6565,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1779237017}
   targetTag: hands
+--- !u!114 &1602297856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602297848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec20dfb2c530774386d4485bc5b3aef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onButtonPressed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 546392102}
+        m_TargetAssemblyTypeName: PrenderMaquina, Assembly-CSharp
+        m_MethodName: StopMachine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  pressedOffset: {x: 0, y: 0, z: -0.05}
+  pressSpeed: 5
 --- !u!1001 &1636493031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7194,7 +7206,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b8b4cd8774883c545803cb4720bdf3b4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3aab7a12a379d364581f1ca9bff7402d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
