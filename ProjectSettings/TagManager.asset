@@ -8,6 +8,7 @@ TagManager:
   - button
   - Hand
   - cable
+  - guante
   layers:
   - Default
   - TransparentFX
