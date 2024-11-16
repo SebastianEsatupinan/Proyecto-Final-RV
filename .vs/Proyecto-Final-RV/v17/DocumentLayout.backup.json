@@ -3,24 +3,8 @@
   "WorkspaceRootPath": "D:\\New folder\\OneDrive\\Escritorio\\CG\\VR1\\New folder\\Proyecto-Final-RV\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FBA78F03-F9B3-9787-2C97-5CDB3D69AC67}|Assembly-CSharp.csproj|d:\\new folder\\onedrive\\escritorio\\cg\\vr1\\new folder\\proyecto-final-rv\\assets\\scrips\\objectinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FBA78F03-F9B3-9787-2C97-5CDB3D69AC67}|Assembly-CSharp.csproj|solutionrelative:assets\\scrips\\objectinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FBA78F03-F9B3-9787-2C97-5CDB3D69AC67}|Assembly-CSharp.csproj|D:\\New folder\\OneDrive\\Escritorio\\CG\\VR1\\New folder\\Proyecto-Final-RV\\assets\\scrips\\prendermaquina.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FBA78F03-F9B3-9787-2C97-5CDB3D69AC67}|Assembly-CSharp.csproj|solutionrelative:assets\\scrips\\prendermaquina.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FBA78F03-F9B3-9787-2C97-5CDB3D69AC67}|Assembly-CSharp.csproj|D:\\New folder\\OneDrive\\Escritorio\\CG\\VR1\\New folder\\Proyecto-Final-RV\\assets\\scrips\\perrilla.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FBA78F03-F9B3-9787-2C97-5CDB3D69AC67}|Assembly-CSharp.csproj|solutionrelative:assets\\scrips\\perrilla.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FBA78F03-F9B3-9787-2C97-5CDB3D69AC67}|Assembly-CSharp.csproj|d:\\new folder\\onedrive\\escritorio\\cg\\vr1\\new folder\\proyecto-final-rv\\assets\\scrips\\bottonaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FBA78F03-F9B3-9787-2C97-5CDB3D69AC67}|Assembly-CSharp.csproj|solutionrelative:assets\\scrips\\bottonaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\New folder\\OneDrive\\Escritorio\\CG\\VR1\\New folder\\Proyecto-Final-RV\\Assets\\Scrips\\ButtonPush.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scrips\\ButtonPush.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|d:\\new folder\\onedrive\\escritorio\\cg\\vr1\\new folder\\proyecto-final-rv\\assets\\scripts\\audiovolumecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\audiovolumecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,65 +19,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ObjectInteraction.cs",
-              "DocumentMoniker": "D:\\New folder\\OneDrive\\Escritorio\\CG\\VR1\\New folder\\Proyecto-Final-RV\\Assets\\Scrips\\ObjectInteraction.cs",
-              "RelativeDocumentMoniker": "Assets\\Scrips\\ObjectInteraction.cs",
-              "ToolTip": "D:\\New folder\\OneDrive\\Escritorio\\CG\\VR1\\New folder\\Proyecto-Final-RV\\Assets\\Scrips\\ObjectInteraction.cs",
-              "RelativeToolTip": "Assets\\Scrips\\ObjectInteraction.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAfAAAAAAAAAA==",
+              "Title": "AudioVolumeController.cs",
+              "DocumentMoniker": "D:\\New folder\\OneDrive\\Escritorio\\CG\\VR1\\New folder\\Proyecto-Final-RV\\Assets\\Scripts\\AudioVolumeController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\AudioVolumeController.cs",
+              "ToolTip": "D:\\New folder\\OneDrive\\Escritorio\\CG\\VR1\\New folder\\Proyecto-Final-RV\\Assets\\Scripts\\AudioVolumeController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\AudioVolumeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T07:20:53.445Z",
+              "WhenOpened": "2024-11-16T10:04:50.946Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BottonAction.cs",
-              "DocumentMoniker": "D:\\New folder\\OneDrive\\Escritorio\\CG\\VR1\\New folder\\Proyecto-Final-RV\\Assets\\Scrips\\BottonAction.cs",
-              "RelativeDocumentMoniker": "Assets\\Scrips\\BottonAction.cs",
-              "ToolTip": "D:\\New folder\\OneDrive\\Escritorio\\CG\\VR1\\New folder\\Proyecto-Final-RV\\Assets\\Scrips\\BottonAction.cs",
-              "RelativeToolTip": "Assets\\Scrips\\BottonAction.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T03:05:24.131Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Perrilla.cs",
-              "DocumentMoniker": "D:\\New folder\\OneDrive\\Escritorio\\CG\\VR1\\New folder\\Proyecto-Final-RV\\Assets\\Scrips\\Perrilla.cs",
-              "RelativeDocumentMoniker": "Assets\\Scrips\\Perrilla.cs",
-              "ToolTip": "D:\\New folder\\OneDrive\\Escritorio\\CG\\VR1\\New folder\\Proyecto-Final-RV\\Assets\\Scrips\\Perrilla.cs",
-              "RelativeToolTip": "Assets\\Scrips\\Perrilla.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAEsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T03:03:49.624Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PrenderMaquina.cs",
-              "DocumentMoniker": "D:\\New folder\\OneDrive\\Escritorio\\CG\\VR1\\New folder\\Proyecto-Final-RV\\Assets\\Scrips\\PrenderMaquina.cs",
-              "RelativeDocumentMoniker": "Assets\\Scrips\\PrenderMaquina.cs",
-              "ToolTip": "D:\\New folder\\OneDrive\\Escritorio\\CG\\VR1\\New folder\\Proyecto-Final-RV\\Assets\\Scrips\\PrenderMaquina.cs",
-              "RelativeToolTip": "Assets\\Scrips\\PrenderMaquina.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T02:53:41.262Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ButtonPush.cs",
-              "DocumentMoniker": "D:\\New folder\\OneDrive\\Escritorio\\CG\\VR1\\New folder\\Proyecto-Final-RV\\Assets\\Scrips\\ButtonPush.cs",
-              "RelativeDocumentMoniker": "Assets\\Scrips\\ButtonPush.cs",
-              "ToolTip": "D:\\New folder\\OneDrive\\Escritorio\\CG\\VR1\\New folder\\Proyecto-Final-RV\\Assets\\Scrips\\ButtonPush.cs",
-              "RelativeToolTip": "Assets\\Scrips\\ButtonPush.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T02:22:17.303Z"
             }
           ]
         }
